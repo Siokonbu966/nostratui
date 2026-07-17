@@ -42,7 +42,7 @@ fn image_decoder_normalizes_retained_size() {
 #[test]
 fn image_decoder_rejects_excessive_dimensions() {
     let mut encoded = Cursor::new(Vec::new());
-    DynamicImage::new_rgba8(2_049, 1)
+    DynamicImage::new_rgba8(4_097, 1)
         .write_to(&mut encoded, ImageFormat::Png)
         .unwrap();
 
@@ -67,6 +67,6 @@ fn image_decoder_rasterizes_svg_custom_emoji() {
 
 #[test]
 fn image_decoder_rejects_oversized_svg_dimensions() {
-    let svg = br#"<svg xmlns="http://www.w3.org/2000/svg" width="2049" height="16"/>"#;
+    let svg = br#"<svg xmlns="http://www.w3.org/2000/svg" width="4097" height="16"/>"#;
     assert!(decode_image(svg.to_vec()).is_err());
 }

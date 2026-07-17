@@ -1,8 +1,8 @@
 use super::*;
 
-const MAX_IMAGE_DOWNLOAD_BYTES: usize = 2 * 1024 * 1024;
-const MAX_IMAGE_DIMENSION: u32 = 2_048;
-const MAX_IMAGE_DECODE_ALLOC: u64 = 32 * 1024 * 1024;
+const MAX_IMAGE_DOWNLOAD_BYTES: usize = 8 * 1024 * 1024;
+const MAX_IMAGE_DIMENSION: u32 = 4_096;
+const MAX_IMAGE_DECODE_ALLOC: u64 = 128 * 1024 * 1024;
 pub(super) const CACHED_IMAGE_SIZE: u32 = 128;
 
 pub(super) async fn fetch_image(http: &HttpClient, url: &str) -> anyhow::Result<DynamicImage> {
